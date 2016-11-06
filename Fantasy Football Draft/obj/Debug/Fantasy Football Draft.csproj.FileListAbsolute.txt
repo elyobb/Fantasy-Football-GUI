@@ -1,0 +1,9 @@
+c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.exe.config
+c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.exe
+c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.pdb
+c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.csprojResolveAssemblyReference.cache
+c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.Properties.Resources.resources
+c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.csproj.GenerateResource.Cache
+c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.exe
+c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.pdb
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.Form1.resources
