@@ -37,12 +37,14 @@ namespace Fantasy_Football_Draft
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fantasyLeagueTab = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.draftedTeamsTable = new System.Windows.Forms.DataGridView();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leagueTeamsListLabel = new System.Windows.Forms.Label();
             this.deleteTeamButton = new System.Windows.Forms.Button();
-            this.leagueTeamsList = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.draftedTeamPlayers = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.fantasyRosterList = new System.Windows.Forms.ListBox();
             this.playersTab = new System.Windows.Forms.TabPage();
             this.addToDraftButton = new System.Windows.Forms.Button();
             this.getBreakdownStatsButton = new System.Windows.Forms.Button();
@@ -57,22 +59,25 @@ namespace Fantasy_Football_Draft
             this.draftTeamTab = new System.Windows.Forms.TabPage();
             this.removeDraftPlayerButton = new System.Windows.Forms.Button();
             this.draftTable = new System.Windows.Forms.DataGridView();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamNameLabel = new System.Windows.Forms.Label();
             this.draftTeamName = new System.Windows.Forms.TextBox();
             this.draftButton = new System.Windows.Forms.Button();
             this.remainingFunds = new System.Windows.Forms.Label();
             this.remainingFundsLabel = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.physical_StatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
             this.fantasyLeagueTab.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.draftedTeamsTable)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.draftedTeamPlayers)).BeginInit();
             this.playersTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerTable)).BeginInit();
             this.draftTeamTab.SuspendLayout();
@@ -110,13 +115,32 @@ namespace Fantasy_Football_Draft
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.draftedTeamsTable);
             this.panel2.Controls.Add(this.leagueTeamsListLabel);
             this.panel2.Controls.Add(this.deleteTeamButton);
-            this.panel2.Controls.Add(this.leagueTeamsList);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(286, 377);
             this.panel2.TabIndex = 2;
+            // 
+            // draftedTeamsTable
+            // 
+            this.draftedTeamsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.draftedTeamsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column13});
+            this.draftedTeamsTable.Location = new System.Drawing.Point(6, 27);
+            this.draftedTeamsTable.MultiSelect = false;
+            this.draftedTeamsTable.Name = "draftedTeamsTable";
+            this.draftedTeamsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.draftedTeamsTable.Size = new System.Drawing.Size(277, 315);
+            this.draftedTeamsTable.TabIndex = 3;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Team Name";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Width = 220;
             // 
             // leagueTeamsListLabel
             // 
@@ -135,23 +159,33 @@ namespace Fantasy_Football_Draft
             this.deleteTeamButton.TabIndex = 1;
             this.deleteTeamButton.Text = "Delete Selected Team";
             this.deleteTeamButton.UseVisualStyleBackColor = true;
-            // 
-            // leagueTeamsList
-            // 
-            this.leagueTeamsList.FormattingEnabled = true;
-            this.leagueTeamsList.Location = new System.Drawing.Point(0, 26);
-            this.leagueTeamsList.Name = "leagueTeamsList";
-            this.leagueTeamsList.Size = new System.Drawing.Size(283, 316);
-            this.leagueTeamsList.TabIndex = 0;
+            this.deleteTeamButton.Click += new System.EventHandler(this.deleteTeamButton_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.draftedTeamPlayers);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.fantasyRosterList);
             this.panel1.Location = new System.Drawing.Point(295, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 377);
             this.panel1.TabIndex = 1;
+            // 
+            // draftedTeamPlayers
+            // 
+            this.draftedTeamPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.draftedTeamPlayers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2});
+            this.draftedTeamPlayers.Location = new System.Drawing.Point(6, 27);
+            this.draftedTeamPlayers.Name = "draftedTeamPlayers";
+            this.draftedTeamPlayers.Size = new System.Drawing.Size(300, 315);
+            this.draftedTeamPlayers.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Player Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 240;
             // 
             // label2
             // 
@@ -161,14 +195,6 @@ namespace Fantasy_Football_Draft
             this.label2.Size = new System.Drawing.Size(116, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Selected Team Roster:";
-            // 
-            // fantasyRosterList
-            // 
-            this.fantasyRosterList.FormattingEnabled = true;
-            this.fantasyRosterList.Location = new System.Drawing.Point(3, 26);
-            this.fantasyRosterList.Name = "fantasyRosterList";
-            this.fantasyRosterList.Size = new System.Drawing.Size(303, 316);
-            this.fantasyRosterList.TabIndex = 0;
             // 
             // playersTab
             // 
@@ -298,6 +324,7 @@ namespace Fantasy_Football_Draft
             // 
             this.draftTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.draftTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column7,
             this.Column8,
             this.Column9,
             this.Column10,
@@ -309,6 +336,42 @@ namespace Fantasy_Football_Draft
             this.draftTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.draftTable.Size = new System.Drawing.Size(668, 328);
             this.draftTable.TabIndex = 6;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Id";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Name";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 120;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Team";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Position";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Rank";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Value";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
             // 
             // teamNameLabel
             // 
@@ -335,6 +398,7 @@ namespace Fantasy_Football_Draft
             this.draftButton.TabIndex = 3;
             this.draftButton.Text = "Draft Team";
             this.draftButton.UseVisualStyleBackColor = true;
+            this.draftButton.Click += new System.EventHandler(this.draftButton_Click);
             // 
             // remainingFunds
             // 
@@ -366,39 +430,7 @@ namespace Fantasy_Football_Draft
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(688, 409);
             this.tabControl.TabIndex = 0;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Name";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 150;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Team";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 150;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Position";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 120;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Rank";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Value";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
+            this.tabControl.Selected += new TabControlEventHandler(tabControl_Selected);
             // 
             // MainForm
             // 
@@ -415,8 +447,10 @@ namespace Fantasy_Football_Draft
             this.fantasyLeagueTab.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.draftedTeamsTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.draftedTeamPlayers)).EndInit();
             this.playersTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.playerTable)).EndInit();
             this.draftTeamTab.ResumeLayout(false);
@@ -444,10 +478,8 @@ namespace Fantasy_Football_Draft
         private Panel panel2;
         private Label leagueTeamsListLabel;
         private Button deleteTeamButton;
-        private ListBox leagueTeamsList;
         private Panel panel1;
         private Label label2;
-        private ListBox fantasyRosterList;
         private TabPage playersTab;
         private Button getBreakdownStatsButton;
         private Button getPhysicalStatsButton;
@@ -468,11 +500,16 @@ namespace Fantasy_Football_Draft
         private Button addToDraftButton;
         private DataGridView draftTable;
         private Button removeDraftPlayerButton;
+        private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column12;
+        private DataGridView draftedTeamsTable;
+        private DataGridViewTextBoxColumn Column13;
+        private DataGridView draftedTeamPlayers;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
 
