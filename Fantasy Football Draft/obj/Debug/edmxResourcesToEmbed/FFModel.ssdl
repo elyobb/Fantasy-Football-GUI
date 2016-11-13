@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FantasyFbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Breakdown_Stats">
+    <Key>
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="StatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerId" Type="int" Nullable="false" />
+    <Property Name="Carries" Type="int" />
+    <Property Name="RushYds" Type="int" />
+    <Property Name="RushTDs" Type="int" />
+    <Property Name="Rec" Type="int" />
+    <Property Name="RecYds" Type="int" />
+    <Property Name="RecTDs" Type="int" />
+    <Property Name="Fum" Type="int" />
+    <Property Name="Passing" Type="int" />
+    <Property Name="Rushing" Type="int" />
+    <Property Name="Receiving" Type="int" />
+    <Property Name="Points" Type="int" />
+  </EntityType>
+  <EntityType Name="Physical_Stats">
+    <Key>
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="StatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerId" Type="int" Nullable="false" />
+    <Property Name="Height" Type="float" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="BloodType" Type="varchar" MaxLength="255" />
+    <Property Name="EyeColor" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="Value" Type="int" />
+    <Property Name="Team" Type="varchar" MaxLength="255" />
+    <Property Name="Position" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="QbBreakdownStats">
+    <Key>
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="StatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerId" Type="int" Nullable="false" />
+    <Property Name="PassYds" Type="int" />
+    <Property Name="PassTDs" Type="int" />
+    <Property Name="PassINT" Type="int" />
+    <Property Name="Fum" Type="int" />
+    <Property Name="Carries" Type="int" />
+    <Property Name="RushYds" Type="int" />
+    <Property Name="RushTDs" Type="int" />
+    <Property Name="Passing" Type="int" />
+    <Property Name="Rushing" Type="int" />
+    <Property Name="Receiving" Type="int" />
+    <Property Name="Pts" Type="int" />
+  </EntityType>
+  <Association Name="FK_dbo_Breakdown_Stats_dbo_Player_Id">
+    <End Role="Player" Type="Self.Player" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Breakdown_Stats" Type="Self.Breakdown_Stats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Breakdown_Stats">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Physical_Stats_dbo_Player_Id">
+    <End Role="Player" Type="Self.Player" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Physical_Stats" Type="Self.Physical_Stats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Physical_Stats">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_QbBreakdownStats_dbo_Player_Id">
+    <End Role="Player" Type="Self.Player" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="QbBreakdownStats" Type="Self.QbBreakdownStats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QbBreakdownStats">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FantasyFbModelStoreContainer">
+    <EntitySet Name="Breakdown_Stats" EntityType="Self.Breakdown_Stats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Physical_Stats" EntityType="Self.Physical_Stats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QbBreakdownStats" EntityType="Self.QbBreakdownStats" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Breakdown_Stats_dbo_Player_Id" Association="Self.FK_dbo_Breakdown_Stats_dbo_Player_Id">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="Breakdown_Stats" EntitySet="Breakdown_Stats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Physical_Stats_dbo_Player_Id" Association="Self.FK_dbo_Physical_Stats_dbo_Player_Id">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="Physical_Stats" EntitySet="Physical_Stats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_QbBreakdownStats_dbo_Player_Id" Association="Self.FK_dbo_QbBreakdownStats_dbo_Player_Id">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="QbBreakdownStats" EntitySet="QbBreakdownStats" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

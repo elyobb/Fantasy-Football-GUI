@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FantasyFbModelStoreContainer" CdmEntityContainer="FantasyFbEntities">
+    <EntitySetMapping Name="Breakdown_Stats">
+      <EntityTypeMapping TypeName="FantasyFbModel.Breakdown_Stats">
+        <MappingFragment StoreEntitySet="Breakdown_Stats">
+          <ScalarProperty Name="StatId" ColumnName="StatId" />
+          <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+          <ScalarProperty Name="Carries" ColumnName="Carries" />
+          <ScalarProperty Name="RushYds" ColumnName="RushYds" />
+          <ScalarProperty Name="RushTDs" ColumnName="RushTDs" />
+          <ScalarProperty Name="Rec" ColumnName="Rec" />
+          <ScalarProperty Name="RecYds" ColumnName="RecYds" />
+          <ScalarProperty Name="RecTDs" ColumnName="RecTDs" />
+          <ScalarProperty Name="Fum" ColumnName="Fum" />
+          <ScalarProperty Name="Passing" ColumnName="Passing" />
+          <ScalarProperty Name="Rushing" ColumnName="Rushing" />
+          <ScalarProperty Name="Receiving" ColumnName="Receiving" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Physical_Stats">
+      <EntityTypeMapping TypeName="FantasyFbModel.Physical_Stats">
+        <MappingFragment StoreEntitySet="Physical_Stats">
+          <ScalarProperty Name="StatId" ColumnName="StatId" />
+          <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+          <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="FantasyFbModel.Player">
+        <MappingFragment StoreEntitySet="Player">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Team" ColumnName="Team" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QbBreakdownStats">
+      <EntityTypeMapping TypeName="FantasyFbModel.QbBreakdownStats">
+        <MappingFragment StoreEntitySet="QbBreakdownStats">
+          <ScalarProperty Name="StatId" ColumnName="StatId" />
+          <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+          <ScalarProperty Name="PassYds" ColumnName="PassYds" />
+          <ScalarProperty Name="PassTDs" ColumnName="PassTDs" />
+          <ScalarProperty Name="PassINT" ColumnName="PassINT" />
+          <ScalarProperty Name="Fum" ColumnName="Fum" />
+          <ScalarProperty Name="Carries" ColumnName="Carries" />
+          <ScalarProperty Name="RushYds" ColumnName="RushYds" />
+          <ScalarProperty Name="RushTDs" ColumnName="RushTDs" />
+          <ScalarProperty Name="Passing" ColumnName="Passing" />
+          <ScalarProperty Name="Rushing" ColumnName="Rushing" />
+          <ScalarProperty Name="Receiving" ColumnName="Receiving" />
+          <ScalarProperty Name="Pts" ColumnName="Pts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

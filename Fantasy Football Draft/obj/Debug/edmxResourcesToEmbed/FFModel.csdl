@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FantasyFbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Breakdown_Stats">
+    <Key>
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="StatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerId" Type="Int32" Nullable="false" />
+    <Property Name="Carries" Type="Int32" />
+    <Property Name="RushYds" Type="Int32" />
+    <Property Name="RushTDs" Type="Int32" />
+    <Property Name="Rec" Type="Int32" />
+    <Property Name="RecYds" Type="Int32" />
+    <Property Name="RecTDs" Type="Int32" />
+    <Property Name="Fum" Type="Int32" />
+    <Property Name="Passing" Type="Int32" />
+    <Property Name="Rushing" Type="Int32" />
+    <Property Name="Receiving" Type="Int32" />
+    <Property Name="Points" Type="Int32" />
+    <NavigationProperty Name="Player" Relationship="Self.FK_dbo_Breakdown_Stats_dbo_Player_Id" FromRole="Breakdown_Stats" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="Physical_Stats">
+    <Key>
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="StatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerId" Type="Int32" Nullable="false" />
+    <Property Name="Height" Type="Double" />
+    <Property Name="Weight" Type="Double" />
+    <Property Name="BloodType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EyeColor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Player" Relationship="Self.FK_dbo_Physical_Stats_dbo_Player_Id" FromRole="Physical_Stats" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="Int32" />
+    <Property Name="Team" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Breakdown_Stats" Relationship="Self.FK_dbo_Breakdown_Stats_dbo_Player_Id" FromRole="Player" ToRole="Breakdown_Stats" />
+    <NavigationProperty Name="Physical_Stats" Relationship="Self.FK_dbo_Physical_Stats_dbo_Player_Id" FromRole="Player" ToRole="Physical_Stats" />
+    <NavigationProperty Name="QbBreakdownStats" Relationship="Self.FK_dbo_QbBreakdownStats_dbo_Player_Id" FromRole="Player" ToRole="QbBreakdownStats" />
+  </EntityType>
+  <EntityType Name="QbBreakdownStats">
+    <Key>
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="StatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerId" Type="Int32" Nullable="false" />
+    <Property Name="PassYds" Type="Int32" />
+    <Property Name="PassTDs" Type="Int32" />
+    <Property Name="PassINT" Type="Int32" />
+    <Property Name="Fum" Type="Int32" />
+    <Property Name="Carries" Type="Int32" />
+    <Property Name="RushYds" Type="Int32" />
+    <Property Name="RushTDs" Type="Int32" />
+    <Property Name="Passing" Type="Int32" />
+    <Property Name="Rushing" Type="Int32" />
+    <Property Name="Receiving" Type="Int32" />
+    <Property Name="Pts" Type="Int32" />
+    <NavigationProperty Name="Player" Relationship="Self.FK_dbo_QbBreakdownStats_dbo_Player_Id" FromRole="QbBreakdownStats" ToRole="Player" />
+  </EntityType>
+  <Association Name="FK_dbo_Breakdown_Stats_dbo_Player_Id">
+    <End Role="Player" Type="Self.Player" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Breakdown_Stats" Type="Self.Breakdown_Stats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Breakdown_Stats">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Physical_Stats_dbo_Player_Id">
+    <End Role="Player" Type="Self.Player" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Physical_Stats" Type="Self.Physical_Stats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Physical_Stats">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_QbBreakdownStats_dbo_Player_Id">
+    <End Role="Player" Type="Self.Player" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="QbBreakdownStats" Type="Self.QbBreakdownStats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QbBreakdownStats">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FantasyFbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Breakdown_Stats" EntityType="Self.Breakdown_Stats" />
+    <EntitySet Name="Physical_Stats" EntityType="Self.Physical_Stats" />
+    <EntitySet Name="Players" EntityType="Self.Player" />
+    <EntitySet Name="QbBreakdownStats" EntityType="Self.QbBreakdownStats" />
+    <AssociationSet Name="FK_dbo_Breakdown_Stats_dbo_Player_Id" Association="Self.FK_dbo_Breakdown_Stats_dbo_Player_Id">
+      <End Role="Player" EntitySet="Players" />
+      <End Role="Breakdown_Stats" EntitySet="Breakdown_Stats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Physical_Stats_dbo_Player_Id" Association="Self.FK_dbo_Physical_Stats_dbo_Player_Id">
+      <End Role="Player" EntitySet="Players" />
+      <End Role="Physical_Stats" EntitySet="Physical_Stats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_QbBreakdownStats_dbo_Player_Id" Association="Self.FK_dbo_QbBreakdownStats_dbo_Player_Id">
+      <End Role="Player" EntitySet="Players" />
+      <End Role="QbBreakdownStats" EntitySet="QbBreakdownStats" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

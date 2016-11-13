@@ -6,4 +6,15 @@ c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fa
 c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.csproj.GenerateResource.Cache
 c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.exe
 c:\users\brennan\documents\visual studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.pdb
-C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.Form1.resources
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\EntityFramework.dll
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\EntityFramework.xml
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\System.Data.SQLite.dll
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\bin\Debug\System.Data.SQLite.xml
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.MainForm.resources
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.PhysicalStatsForm.resources
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.BreakdownStatsForm.resources
+C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.QbBreakdownStatsForm.resources
