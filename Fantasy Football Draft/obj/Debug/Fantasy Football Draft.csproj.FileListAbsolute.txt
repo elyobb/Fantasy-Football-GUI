@@ -18,3 +18,23 @@ C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fa
 C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.PhysicalStatsForm.resources
 C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.BreakdownStatsForm.resources
 C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.QbBreakdownStatsForm.resources
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.exe.config
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.exe
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.pdb
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.exe
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.pdb
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\EntityFramework.dll
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\EntityFramework.SqlServer.dll
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\System.Data.SQLite.dll
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\System.Data.SQLite.EF6.dll
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\System.Data.SQLite.Linq.dll
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\EntityFramework.xml
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\EntityFramework.SqlServer.xml
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\bin\Debug\System.Data.SQLite.xml
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.csprojResolveAssemblyReference.cache
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.BreakdownStatsForm.resources
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.MainForm.resources
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.PhysicalStatsForm.resources
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.Properties.Resources.resources
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.QbBreakdownStatsForm.resources
+\\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.csproj.GenerateResource.Cache

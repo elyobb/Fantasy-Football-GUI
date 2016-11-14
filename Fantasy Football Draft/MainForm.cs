@@ -21,6 +21,9 @@ namespace Fantasy_Football_Draft
             InitializeComponent();
         }
 
+        /**
+         * Main app form load event
+         */
         private void Form1_Load(object sender, EventArgs e)
         {
             // open connection for all sql calls while app is active
@@ -34,6 +37,9 @@ namespace Fantasy_Football_Draft
 
         }
 
+        /**
+         * Selects the players on the currently selected drafted team when the selected team changes.
+         */
         private void draftedTeamTable_SelectionChanged(object sender, EventArgs e)
         {
             //first clear out old data
@@ -51,25 +57,9 @@ namespace Fantasy_Football_Draft
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void qbSelectionList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void playerBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void playerDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        /**
+         * Refreshes the list of drafted teams when the tab is selected, in case a team has been deleted
+         */
         private void tabControl_Selected(object sender, TabControlEventArgs e)
         {
             if (e.TabPage.Name == "fantasyLeagueTab")
@@ -107,6 +97,10 @@ namespace Fantasy_Football_Draft
             }
         }
 
+        /**
+         * Poulates all drafted teams from the DraftedTeams table, then all the players on that team
+         * from the DraftedPlayers table.
+         */
         private void populateLeagueTeams(SQLiteConnection conn)
         {
             // first clear table
@@ -132,6 +126,9 @@ namespace Fantasy_Football_Draft
             }
         }
 
+        /**
+         * Populates from the DraftedPlayers table all players for the selected team name in the Drafted Teams list
+         */
         private void populateDraftedTeamPlayers(SQLiteConnection conn, String teamName)
         {
             // now find all players with this team name, and add them to the roster panel
@@ -149,6 +146,9 @@ namespace Fantasy_Football_Draft
             }
         }
 
+        /**
+         * Displays a popup for the selected player showing their physical stats including blood type and eye color
+         */
         private void getPhysicalStatsButton_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = playerTable.SelectedRows[0];
@@ -158,6 +158,9 @@ namespace Fantasy_Football_Draft
             popup.Show();
         }
         
+        /**
+         * Displays a popup for the selected player showing their play performance stats
+         */ 
         private void getBreakdownStatsButton_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = playerTable.SelectedRows[0];
@@ -177,6 +180,10 @@ namespace Fantasy_Football_Draft
             }
         }
 
+        /**
+         * Adds the selected player to the draft list if it doesn't already exist there.
+         * The cost of the player is debited from the remaining funds to draft with. 
+         */
         private void addToDraftButton_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = playerTable.SelectedRows[0];
@@ -191,7 +198,7 @@ namespace Fantasy_Football_Draft
             bool exists = false;
             foreach (DataGridViewRow row in draftTable.Rows)
             {
-
+                // the table will have an empty row even if it has no data, so we check for that to be null 
                 if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().Equals(playerId))
                 {
                     exists = true;
@@ -214,24 +221,30 @@ namespace Fantasy_Football_Draft
                 }
                 catch (System.FormatException)
                 {
-                    // happens when funds go below 0
+                    // if funds have updated to be below 0, an exception is thrown because we haven't set the flag for allowing negatives
                     String strFunds = remainingFunds.Text.Replace(",", "");
+                    // tell number parser to parse negatives
                     remFunds = Int32.Parse(strFunds, NumberStyles.AllowLeadingSign);
                 }
-
                 remFunds -= intValue;
+                // argument "N0" on toString adds back in the ',' thousands separators  
                 remainingFunds.Text = remFunds.ToString("N0");
-
             }
             else
             {
+                // user can't draft 85 Ocho Cincos
                 MessageBox.Show("Player already in draft list!");
             }
         }
 
+        /**
+         * Removes a player from the list to draft. Whatever their draft value was
+         * is deposited back into the remaining funds.
+         */
         private void removeDraftPlayerButton_Click(object sender, EventArgs e)
         {
-
+            // the default number of rows in a datagridview (gui table) is 1 empty row.
+            // this can probably be changed as a property
             if(draftTable.Rows.Count > 1)
             {
                 DataGridViewRow selectedRow = draftTable.SelectedRows[0];
@@ -255,18 +268,28 @@ namespace Fantasy_Football_Draft
 
         }
 
+        /**
+         * Adds the current working list in the "to draft" list to a new drafted team, with the name of 
+         * whatever the user entered as the team name. Each player in the list is added to DraftedPlayers 
+         * with a reference to the team name (which is added to the separate DraftedTeams table).
+         * 
+         * A team is not drafted if the user hasn't the funds, hasn't entered a team name or has entered
+         * a team name which already exists.     
+         */
         private void draftButton_Click(object sender, EventArgs e)
         {
             String teamName = draftTeamName.Text;
             int remFunds;
             try
             {
+                // allowThousands flag parses numbers with ',' separating thousands
                 remFunds = Int32.Parse(remainingFunds.Text, NumberStyles.AllowThousands);
             }
             catch (System.FormatException)
             {
-                // happens when funds go below 0
+                // if funds have updated to be below 0, an exception is thrown because we haven't set the flag for allowing negatives
                 String strFunds = remainingFunds.Text.Replace(",", "");
+                // tell the number parser to parse negatives 
                 remFunds = Int32.Parse(strFunds, NumberStyles.AllowLeadingSign);
             }
             if (teamName == null || teamName == "")
@@ -309,7 +332,7 @@ namespace Fantasy_Football_Draft
                 }
                 if (rowsAdded)
                 {
-                    MessageBox.Show("Team " + teamName + " successfully drafted!");
+                    MessageBox.Show("Team '" + teamName + "' successfully drafted!");
                     // clear out the data because the players were drafted
                     draftTable.Rows.Clear();
                     draftTeamName.Text = "";
@@ -317,11 +340,19 @@ namespace Fantasy_Football_Draft
             }
             else
             {
+                // what happens when your money is less than 0
                 MessageBox.Show("You don't have enough money to draft this team. Try removing some players.");
                 return;
             }
         }
 
+        /**
+         * Deletes a team from the database.
+         * Starts by deleting the individual players referencing the team in DraftedPlayers, then the team itself
+         * in DraftedTeams.
+         * 
+         * Finally, deletes the entry in the GUI table
+         */
         private void deleteTeamButton_Click(object sender, EventArgs e)
         {
             SQLiteConnection conn = new SQLiteConnection(connStr);

@@ -388,8 +388,9 @@ namespace Fantasy_Football_Draft
             this.draftTeamName.Name = "draftTeamName";
             this.draftTeamName.Size = new System.Drawing.Size(98, 20);
             this.draftTeamName.TabIndex = 4;
-            this.draftTeamName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
             // 
+
             // draftButton
             // 
             this.draftButton.Location = new System.Drawing.Point(599, 353);
@@ -467,13 +468,6 @@ namespace Fantasy_Football_Draft
         private System.Windows.Forms.BindingSource playerBindingSource;
         private System.Windows.Forms.BindingSource physical_StatsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn team;
-        private System.Windows.Forms.DataGridViewTextBoxColumn position;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn value;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerName;
         private TabPage fantasyLeagueTab;
         private Panel panel2;
         private Label leagueTeamsListLabel;
