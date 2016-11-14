@@ -24,7 +24,7 @@ namespace Fantasy_Football_Draft
         private void Form1_Load(object sender, EventArgs e)
         {
             // open connection for all sql calls while app is active
-            this.connStr = @"data source = 'C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\FantasyFootballDb'";
+            this.connStr = @"data source = '..\..\..\FantasyFootballDb'";
             SQLiteConnection conn = new SQLiteConnection(connStr);
             conn.Open();
             populatePlayerTable(conn);

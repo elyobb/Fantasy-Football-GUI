@@ -16,7 +16,7 @@ namespace Fantasy_Football_Draft
         private String connStr;
         public PhysicalStatsForm(String playerId)
         {
-            this.connStr = @"data source = 'C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\FantasyFootballDb'";
+            this.connStr = @"data source = '..\..\..\FantasyFootballDb'";
             InitializeComponent();
             // fill out the physical stats data
             populatePlayerStats(playerId);
