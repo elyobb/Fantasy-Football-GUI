@@ -38,3 +38,26 @@ C:\Users\Brennan\Documents\Visual Studio 2015\Projects\Fantasy Football Draft\Fa
 \\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.Properties.Resources.resources
 \\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.QbBreakdownStatsForm.resources
 \\kc.umkc.edu\kc-users\home\b\bpbyt3\Desktop\gui\Fantasy-Football-GUI\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.csproj.GenerateResource.Cache
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.exe.config
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.exe
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.pdb
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.exe
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.pdb
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\EntityFramework.dll
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\System.Data.SQLite.dll
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\EntityFramework.xml
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\System.Data.SQLite.xml
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.csprojResolveAssemblyReference.cache
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.BreakdownStatsForm.resources
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.MainForm.resources
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.PhysicalStatsForm.resources
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.Properties.Resources.resources
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy_Football_Draft.QbBreakdownStatsForm.resources
+C:\Users\david\OneDrive\VS Projects\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.csproj.GenerateResource.Cache
+C:\Users\Brennan\Desktop\Fantasy-Football-GUI-master\Fantasy-Football-GUI-master\Fantasy Football Draft\bin\Debug\Fantasy Football Draft.exe.config
+C:\Users\Brennan\Desktop\Fantasy-Football-GUI-master\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.exe
+C:\Users\Brennan\Desktop\Fantasy-Football-GUI-master\Fantasy-Football-GUI-master\Fantasy Football Draft\obj\Debug\Fantasy Football Draft.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fantasy_Football_Draft.SQL_Queries;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,40 +14,26 @@ namespace Fantasy_Football_Draft
 {
     public partial class QbBreakdownStatsForm : Form
     {
-        private String connStr;
-        public QbBreakdownStatsForm(String playerId)
+        public QbBreakdownStatsForm(string playerId)
         {
-            this.connStr = @"data source = '..\..\..\FantasyFootballDb'";
             InitializeComponent();
             populateQbBreakdownStats(playerId);
         }
 
-        private void populateQbBreakdownStats(String playerId)
+        private void populateQbBreakdownStats(string playerId)
         {
-            SQLiteConnection conn = new SQLiteConnection(connStr);
-            conn.Open();
+            var query = new SqlQueries();
+            var player = query.GetPlayerInfo(playerId);
 
-            String sqlText = @"Select p.Name, b.PassYds, b.PassTDs, b.PassInt, b.RushTDs, b.RushYds, b.Carries, b.Fum, b.Pts from 
-                Player as p, QbBreakdownStats as b where b.PlayerId = p.Id and b.PlayerId =" + playerId;
-
-            SQLiteCommand comm = new SQLiteCommand(sqlText, conn);
-            using (SQLiteDataReader read = comm.ExecuteReader())
-            {
-                while (read.Read())
-                {
-                    this.playerName.Text = read.GetValue(0).ToString();
-                    this.playerPassYds.Text = read.GetValue(1).ToString();
-                    this.playerPassTDs.Text = read.GetValue(2).ToString();
-                    this.playerInts.Text = read.GetValue(3).ToString();
-                    this.playerRushingTds.Text = read.GetValue(4).ToString();
-                    this.playerRushingYds.Text = read.GetValue(5).ToString();
-                    this.playerCarries.Text = read.GetValue(6).ToString();
-                    this.playerFumbles.Text = read.GetValue(7).ToString();
-                    this.playerPts.Text = read.GetValue(8).ToString();
-                }
-            }
-
-            conn.Close();
+            this.playerName.Text = player.playerName;
+            this.playerPassYds.Text = player.playerPassYds;
+            this.playerPassTDs.Text = player.playerPassTDs;
+            this.playerInts.Text = player.playerInts;
+            this.playerRushingTds.Text = player.playerRushingTds;
+            this.playerRushingYds.Text = player.playerRushingYds;
+            this.playerCarries.Text = player.playerCarries;
+            this.playerFumbles.Text = player.playerFumbles;
+            this.playerPts.Text = player.playerPts;
 
         }
     }

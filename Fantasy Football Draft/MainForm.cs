@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fantasy_Football_Draft.SQL_Queries;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +15,15 @@ namespace Fantasy_Football_Draft
 {
     public partial class MainForm : Form
     {
-        private String connStr;
+        private Connection connection = new Connection();
+        private SQLiteConnection conn;
+        private SqlQueries queries;
 
         public MainForm()
         {
             InitializeComponent();
+            queries = new SqlQueries();
+            conn = connection.GetConnection();
         }
 
         /**
@@ -27,11 +32,10 @@ namespace Fantasy_Football_Draft
         private void Form1_Load(object sender, EventArgs e)
         {
             // open connection for all sql calls while app is active
-            this.connStr = @"data source = '..\..\..\FantasyFootballDb'";
-            SQLiteConnection conn = new SQLiteConnection(connStr);
+
             conn.Open();
-            populatePlayerTable(conn);
-            populateLeagueTeams(conn);
+            populatePlayerTable();
+            populateLeagueTeams();
             this.draftedTeamsTable.SelectionChanged += new System.EventHandler(this.draftedTeamTable_SelectionChanged);
             conn.Close();
 
@@ -48,10 +52,9 @@ namespace Fantasy_Football_Draft
                 DataGridViewRow selectedRow = this.draftedTeamsTable.SelectedRows[0];
                 if(selectedRow.Cells[0].Value != null)
                 {
-                    String teamName = selectedRow.Cells[0].Value.ToString();
-                    SQLiteConnection conn = new SQLiteConnection(connStr);
+                    var teamName = selectedRow.Cells[0].Value.ToString();
                     conn.Open();
-                    populateDraftedTeamPlayers(conn, teamName);
+                    populateDraftedTeamPlayers(teamName);
                     conn.Close();
                 }
             }
@@ -64,18 +67,17 @@ namespace Fantasy_Football_Draft
         {
             if (e.TabPage.Name == "fantasyLeagueTab")
             {
-                SQLiteConnection conn = new SQLiteConnection(connStr);
                 conn.Open();
-                populateLeagueTeams(conn);
+                populateLeagueTeams();
                 conn.Close();
             }
         }
 
         /* calls a select from the database for all player data, populates it into the playerTable 
         in the GUI */
-        private void populatePlayerTable(SQLiteConnection conn)
+        private void populatePlayerTable()
         {
-            SQLiteCommand comm = new SQLiteCommand("Select * From Player", conn);
+            var comm = connection.GetCommand("Select * From Player");
             using (SQLiteDataReader read = comm.ExecuteReader())
             {
                 while (read.Read())
@@ -83,7 +85,7 @@ namespace Fantasy_Football_Draft
                     // parse value into lots of money
                     int rawValue = (int)read.GetValue(3);
                     int newValue = rawValue * 10000;
-                    String stringNewValue = newValue.ToString("N0");
+                    string stringNewValue = newValue.ToString("N0");
 
                     playerTable.Rows.Add(new object[] {
                         read.GetValue(0),
@@ -101,12 +103,12 @@ namespace Fantasy_Football_Draft
          * Poulates all drafted teams from the DraftedTeams table, then all the players on that team
          * from the DraftedPlayers table.
          */
-        private void populateLeagueTeams(SQLiteConnection conn)
+        private void populateLeagueTeams()
         {
             // first clear table
             draftedTeamsTable.Rows.Clear();
 
-            SQLiteCommand comm = new SQLiteCommand("Select * From DraftedTeams", conn);
+            var comm = connection.GetCommand("Select * From DraftedTeams");
             using (SQLiteDataReader read = comm.ExecuteReader())
             {
                 while (read.Read())
@@ -121,19 +123,19 @@ namespace Fantasy_Football_Draft
             draftedTeamsTable.Rows[0].Selected = true;
             if(draftedTeamsTable.Rows[0].Cells[0].Value != null)
             {
-                String selectedTeam = draftedTeamsTable.Rows[0].Cells[0].Value.ToString();
-                populateDraftedTeamPlayers(conn, selectedTeam);
+                string selectedTeam = draftedTeamsTable.Rows[0].Cells[0].Value.ToString();
+                populateDraftedTeamPlayers(selectedTeam);
             }
         }
 
         /**
          * Populates from the DraftedPlayers table all players for the selected team name in the Drafted Teams list
          */
-        private void populateDraftedTeamPlayers(SQLiteConnection conn, String teamName)
+        private void populateDraftedTeamPlayers(string teamName)
         {
             // now find all players with this team name, and add them to the roster panel
-            String sql = @"select p.Name from Player as p where p.Id in (select PlayerId from DraftedPlayers where TeamName ='" + teamName + "');";
-            SQLiteCommand comm = new SQLiteCommand(sql, conn);
+            var query = @"select p.Name from Player as p where p.Id in (select PlayerId from DraftedPlayers where TeamName ='" + teamName + "');";
+            var comm = connection.GetCommand(query);
             using (SQLiteDataReader read = comm.ExecuteReader())
             {
                 while (read.Read())
@@ -152,7 +154,7 @@ namespace Fantasy_Football_Draft
         private void getPhysicalStatsButton_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = playerTable.SelectedRows[0];
-            String playerId = selectedRow.Cells[0].Value.ToString();
+            string playerId = selectedRow.Cells[0].Value.ToString();
             // creates a popup for the selected player which shows their physical stats
             PhysicalStatsForm popup = new PhysicalStatsForm(playerId);
             popup.Show();
@@ -164,8 +166,8 @@ namespace Fantasy_Football_Draft
         private void getBreakdownStatsButton_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = playerTable.SelectedRows[0];
-            String playerId = selectedRow.Cells[0].Value.ToString();
-            String playerPos = selectedRow.Cells[3].Value.ToString();
+            var playerId = selectedRow.Cells[0].Value.ToString();
+            var playerPos = selectedRow.Cells[3].Value.ToString();
 
             // quarterbacks have different breakdown stats form
             if(playerPos == "QB")
@@ -187,12 +189,12 @@ namespace Fantasy_Football_Draft
         private void addToDraftButton_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = playerTable.SelectedRows[0];
-            String playerId = selectedRow.Cells[0].Value.ToString();
-            String playerName = selectedRow.Cells[1].Value.ToString();
-            String team = selectedRow.Cells[2].Value.ToString();
-            String position = selectedRow.Cells[3].Value.ToString();
-            String rank = selectedRow.Cells[4].Value.ToString();
-            String value = selectedRow.Cells[5].Value.ToString();
+            string playerId = selectedRow.Cells[0].Value.ToString();
+            string playerName = selectedRow.Cells[1].Value.ToString();
+            string team = selectedRow.Cells[2].Value.ToString();
+            string position = selectedRow.Cells[3].Value.ToString();
+            string rank = selectedRow.Cells[4].Value.ToString();
+            string value = selectedRow.Cells[5].Value.ToString();
             int intValue = Int32.Parse(value, NumberStyles.AllowThousands);
             // adds the selected player to the draft tab list if it doesnt exist
             bool exists = false;
@@ -278,7 +280,7 @@ namespace Fantasy_Football_Draft
          */
         private void draftButton_Click(object sender, EventArgs e)
         {
-            String teamName = draftTeamName.Text;
+            var teamName = draftTeamName.Text;
             int remFunds;
             try
             {
@@ -288,7 +290,7 @@ namespace Fantasy_Football_Draft
             catch (System.FormatException)
             {
                 // if funds have updated to be below 0, an exception is thrown because we haven't set the flag for allowing negatives
-                String strFunds = remainingFunds.Text.Replace(",", "");
+                var strFunds = remainingFunds.Text.Replace(",", "");
                 // tell the number parser to parse negatives 
                 remFunds = Int32.Parse(strFunds, NumberStyles.AllowLeadingSign);
             }
@@ -301,13 +303,11 @@ namespace Fantasy_Football_Draft
             if (remFunds >= 0)
             {
                 bool rowsAdded = false;
-                SQLiteConnection conn = new SQLiteConnection(connStr);
-                conn.Open();
-                String insertTeamSql = "Insert into DraftedTeams(TeamName) values ('" + teamName + "');";
-                SQLiteCommand comm = new SQLiteCommand(insertTeamSql, conn);
+                var insertTeamSql = @"Insert into DraftedTeams(TeamName) values ('" + teamName + "');";
+
                 try
                 {
-                    comm.ExecuteNonQuery();
+                    queries.ExecuteQuery(insertTeamSql);
                 }
                 catch(SQLiteException)
                 {
@@ -317,16 +317,14 @@ namespace Fantasy_Football_Draft
                 // the team name was unique and valid, so go ahead and add each player to the drafted player table
                 foreach (DataGridViewRow row in draftTable.Rows)
                 {
-                   
                     if(row.Cells[0].Value != null)
                     {
-                        String id = row.Cells[0].Value.ToString();
+                        var id = row.Cells[0].Value.ToString();
                         // dynamically created sql based on which players are in 'To draft' table
-                        String insertDraftedPlayerSql = @"Insert into DraftedPlayers(PlayerId, TeamName) Values (" + id
+                        var insertDraftedPlayerSql = @"Insert into DraftedPlayers(PlayerId, TeamName) Values (" + id
                             + ", '" + teamName + "');";
 
-                        comm = new SQLiteCommand(insertDraftedPlayerSql, conn);
-                        comm.ExecuteNonQuery();
+                        queries.ExecuteQuery(insertDraftedPlayerSql);
                         rowsAdded = true;
                     }
                 }
@@ -355,19 +353,12 @@ namespace Fantasy_Football_Draft
          */
         private void deleteTeamButton_Click(object sender, EventArgs e)
         {
-            SQLiteConnection conn = new SQLiteConnection(connStr);
-            conn.Open();
-
             DataGridViewRow selectedRow = draftedTeamsTable.SelectedRows[0];
-            String teamName = selectedRow.Cells[0].Value.ToString();
-            String deleteSql = "Delete from DraftedPlayers where TeamName ='" + teamName + "';";
-            SQLiteCommand comm = new SQLiteCommand(deleteSql, conn);
-            comm.ExecuteNonQuery();
-            deleteSql = "Delete from DraftedTeams where TeamName = '" + teamName + "'; ";
-            comm = new SQLiteCommand(deleteSql, conn);
-            comm.ExecuteNonQuery();          
-            conn.Close();
-
+            var teamName = selectedRow.Cells[0].Value.ToString();
+            var deleteDraftedPlayers = "Delete from DraftedPlayers where TeamName ='" + teamName + "';";
+            var deleteDraftedTeams = "Delete from DraftedTeams where TeamName = '" + teamName + "'; ";
+            queries.ExecuteQuery(deleteDraftedPlayers);
+            queries.ExecuteQuery(deleteDraftedTeams);
             draftedTeamsTable.Rows.Remove(selectedRow);
         }
     }
