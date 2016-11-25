@@ -9,8 +9,8 @@ namespace Fantasy_Football_Draft.Models
     public class PlayerModel
     {
         public string playerName { get; set; }
-        public string playerPassYds { get; set; }
-        public string playerPassTDs { get; set; }
+        public string playerPassingYds { get; set; }
+        public string playerPassingTDs { get; set; }
         public string playerInts { get; set; }
         public string playerRushingTds { get; set; }
         public string playerRushingYds { get; set; }

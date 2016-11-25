@@ -26,8 +26,8 @@ namespace Fantasy_Football_Draft
             var player = query.GetPlayerInfo(playerId);
 
             this.playerName.Text = player.playerName;
-            this.playerPassYds.Text = player.playerPassYds;
-            this.playerPassTDs.Text = player.playerPassTDs;
+            this.playerPassingYds.Text = player.playerPassingYds;
+            this.playerPassingTDs.Text = player.playerPassingTDs;
             this.playerInts.Text = player.playerInts;
             this.playerRushingTds.Text = player.playerRushingTds;
             this.playerRushingYds.Text = player.playerRushingYds;

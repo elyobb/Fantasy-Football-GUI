@@ -9,6 +9,7 @@ namespace Fantasy_Football_Draft.Models
     public class BreakdownStatModel
     {
         public string playerName { get; set; }
+        public string playerCarries { get; set; }
         public string playerRushingYds { get; set; }
         public string playerRushingTDs { get; set; }
         public string playerReceptions { get; set; }

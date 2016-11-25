@@ -24,6 +24,7 @@ namespace Fantasy_Football_Draft
             var breakdown = queries.GetBreakdownStat(playerId);
 
             this.playerName.Text = breakdown.playerName;
+            this.playerCarries.Text = breakdown.playerCarries;
             this.playerRushingYds.Text = breakdown.playerRushingYds;
             this.playerRushingTDs.Text = breakdown.playerRushingTDs;
             this.playerReceptions.Text = breakdown.playerReceptions;

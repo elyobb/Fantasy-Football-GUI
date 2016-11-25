@@ -35,13 +35,14 @@ namespace Fantasy_Football_Draft.SQL_Queries
                 while (read.Read())
                 {
                     stat.playerName = read.GetValue(0).ToString();
-                    stat.playerRushingYds = read.GetValue(1).ToString();
-                    stat.playerRushingTDs = read.GetValue(2).ToString();
-                    stat.playerReceptions = read.GetValue(3).ToString();
-                    stat.playerRecYds = read.GetValue(4).ToString();
-                    stat.playerRecTDs = read.GetValue(5).ToString();
-                    stat.playerFumbles = read.GetValue(6).ToString();
-                    stat.playerPts = read.GetValue(7).ToString();
+                    stat.playerCarries = read.GetValue(1).ToString();
+                    stat.playerRushingYds = read.GetValue(2).ToString();
+                    stat.playerRushingTDs = read.GetValue(3).ToString();
+                    stat.playerReceptions = read.GetValue(4).ToString();
+                    stat.playerRecYds = read.GetValue(5).ToString();
+                    stat.playerRecTDs = read.GetValue(6).ToString();
+                    stat.playerFumbles = read.GetValue(7).ToString();
+                    stat.playerPts = read.GetValue(8).ToString();
                 }
             }
             conn.GetConnection().Close();
@@ -89,8 +90,8 @@ namespace Fantasy_Football_Draft.SQL_Queries
                 while (read.Read())
                 {
                     player.playerName = read.GetValue(0).ToString();
-                    player.playerPassYds = read.GetValue(1).ToString();
-                    player.playerPassTDs = read.GetValue(2).ToString();
+                    player.playerPassingYds = read.GetValue(1).ToString();
+                    player.playerPassingTDs = read.GetValue(2).ToString();
                     player.playerInts = read.GetValue(3).ToString();
                     player.playerRushingTds = read.GetValue(4).ToString();
                     player.playerRushingYds = read.GetValue(5).ToString();
