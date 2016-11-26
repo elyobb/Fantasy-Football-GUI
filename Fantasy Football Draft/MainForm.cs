@@ -38,7 +38,6 @@ namespace Fantasy_Football_Draft
             populateLeagueTeams();
             this.draftedTeamsTable.SelectionChanged += new System.EventHandler(this.draftedTeamTable_SelectionChanged);
             conn.Close();
-
         }
 
         /**
