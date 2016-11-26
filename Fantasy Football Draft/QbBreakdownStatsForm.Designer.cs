@@ -112,7 +112,7 @@
             // playerRushingTds
             // 
             this.playerRushingTds.AutoSize = true;
-            this.playerRushingTds.Location = new System.Drawing.Point(92, 128);
+            this.playerRushingTds.Location = new System.Drawing.Point(104, 128);
             this.playerRushingTds.Name = "playerRushingTds";
             this.playerRushingTds.Size = new System.Drawing.Size(92, 13);
             this.playerRushingTds.TabIndex = 35;
@@ -121,7 +121,7 @@
             // rushingTDsLabel
             // 
             this.rushingTDsLabel.AutoSize = true;
-            this.rushingTDsLabel.Location = new System.Drawing.Point(6, 128);
+            this.rushingTDsLabel.Location = new System.Drawing.Point(18, 128);
             this.rushingTDsLabel.Name = "rushingTDsLabel";
             this.rushingTDsLabel.Size = new System.Drawing.Size(72, 13);
             this.rushingTDsLabel.TabIndex = 34;
@@ -130,7 +130,7 @@
             // playerFumbles
             // 
             this.playerFumbles.AutoSize = true;
-            this.playerFumbles.Location = new System.Drawing.Point(92, 198);
+            this.playerFumbles.Location = new System.Drawing.Point(104, 198);
             this.playerFumbles.Name = "playerFumbles";
             this.playerFumbles.Size = new System.Drawing.Size(74, 13);
             this.playerFumbles.TabIndex = 31;
@@ -139,7 +139,7 @@
             // fumblesLabel
             // 
             this.fumblesLabel.AutoSize = true;
-            this.fumblesLabel.Location = new System.Drawing.Point(6, 198);
+            this.fumblesLabel.Location = new System.Drawing.Point(18, 198);
             this.fumblesLabel.Name = "fumblesLabel";
             this.fumblesLabel.Size = new System.Drawing.Size(49, 13);
             this.fumblesLabel.TabIndex = 30;
@@ -148,7 +148,7 @@
             // playerRushingYds
             // 
             this.playerRushingYds.AutoSize = true;
-            this.playerRushingYds.Location = new System.Drawing.Point(92, 164);
+            this.playerRushingYds.Location = new System.Drawing.Point(104, 164);
             this.playerRushingYds.Name = "playerRushingYds";
             this.playerRushingYds.Size = new System.Drawing.Size(92, 13);
             this.playerRushingYds.TabIndex = 25;
@@ -157,7 +157,7 @@
             // rushYdsLabel
             // 
             this.rushYdsLabel.AutoSize = true;
-            this.rushYdsLabel.Location = new System.Drawing.Point(6, 164);
+            this.rushYdsLabel.Location = new System.Drawing.Point(18, 164);
             this.rushYdsLabel.Name = "rushYdsLabel";
             this.rushYdsLabel.Size = new System.Drawing.Size(70, 13);
             this.rushYdsLabel.TabIndex = 24;
@@ -166,7 +166,7 @@
             // playerInts
             // 
             this.playerInts.AutoSize = true;
-            this.playerInts.Location = new System.Drawing.Point(92, 89);
+            this.playerInts.Location = new System.Drawing.Point(104, 89);
             this.playerInts.Name = "playerInts";
             this.playerInts.Size = new System.Drawing.Size(52, 13);
             this.playerInts.TabIndex = 23;
@@ -175,7 +175,7 @@
             // playerIntsLabel
             // 
             this.playerIntsLabel.AutoSize = true;
-            this.playerIntsLabel.Location = new System.Drawing.Point(6, 89);
+            this.playerIntsLabel.Location = new System.Drawing.Point(18, 89);
             this.playerIntsLabel.Name = "playerIntsLabel";
             this.playerIntsLabel.Size = new System.Drawing.Size(71, 13);
             this.playerIntsLabel.TabIndex = 22;
@@ -184,7 +184,7 @@
             // playerPassingTDs
             // 
             this.playerPassingTDs.AutoSize = true;
-            this.playerPassingTDs.Location = new System.Drawing.Point(92, 51);
+            this.playerPassingTDs.Location = new System.Drawing.Point(104, 51);
             this.playerPassingTDs.Name = "playerPassingTDs";
             this.playerPassingTDs.Size = new System.Drawing.Size(92, 13);
             this.playerPassingTDs.TabIndex = 21;
@@ -193,7 +193,7 @@
             // passingTDsLabel
             // 
             this.passingTDsLabel.AutoSize = true;
-            this.passingTDsLabel.Location = new System.Drawing.Point(6, 51);
+            this.passingTDsLabel.Location = new System.Drawing.Point(18, 51);
             this.passingTDsLabel.Name = "passingTDsLabel";
             this.passingTDsLabel.Size = new System.Drawing.Size(70, 13);
             this.passingTDsLabel.TabIndex = 20;
@@ -202,7 +202,7 @@
             // playerPassingYds
             // 
             this.playerPassingYds.AutoSize = true;
-            this.playerPassingYds.Location = new System.Drawing.Point(92, 17);
+            this.playerPassingYds.Location = new System.Drawing.Point(104, 17);
             this.playerPassingYds.Name = "playerPassingYds";
             this.playerPassingYds.Size = new System.Drawing.Size(90, 13);
             this.playerPassingYds.TabIndex = 19;
@@ -211,7 +211,7 @@
             // passingYdsLabel
             // 
             this.passingYdsLabel.AutoSize = true;
-            this.passingYdsLabel.Location = new System.Drawing.Point(6, 17);
+            this.passingYdsLabel.Location = new System.Drawing.Point(18, 17);
             this.passingYdsLabel.Name = "passingYdsLabel";
             this.passingYdsLabel.Size = new System.Drawing.Size(68, 13);
             this.passingYdsLabel.TabIndex = 18;
@@ -242,7 +242,7 @@
             // playerRushingTdsLy
             // 
             this.playerRushingTdsLy.AutoSize = true;
-            this.playerRushingTdsLy.Location = new System.Drawing.Point(92, 125);
+            this.playerRushingTdsLy.Location = new System.Drawing.Point(102, 125);
             this.playerRushingTdsLy.Name = "playerRushingTdsLy";
             this.playerRushingTdsLy.Size = new System.Drawing.Size(103, 13);
             this.playerRushingTdsLy.TabIndex = 49;
@@ -251,7 +251,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 125);
+            this.label3.Location = new System.Drawing.Point(16, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 48;
@@ -260,7 +260,7 @@
             // playerFumblesLy
             // 
             this.playerFumblesLy.AutoSize = true;
-            this.playerFumblesLy.Location = new System.Drawing.Point(92, 200);
+            this.playerFumblesLy.Location = new System.Drawing.Point(102, 200);
             this.playerFumblesLy.Name = "playerFumblesLy";
             this.playerFumblesLy.Size = new System.Drawing.Size(85, 13);
             this.playerFumblesLy.TabIndex = 45;
@@ -269,7 +269,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 200);
+            this.label4.Location = new System.Drawing.Point(16, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 44;
@@ -278,7 +278,7 @@
             // playerRushingYdsLy
             // 
             this.playerRushingYdsLy.AutoSize = true;
-            this.playerRushingYdsLy.Location = new System.Drawing.Point(92, 160);
+            this.playerRushingYdsLy.Location = new System.Drawing.Point(102, 160);
             this.playerRushingYdsLy.Name = "playerRushingYdsLy";
             this.playerRushingYdsLy.Size = new System.Drawing.Size(103, 13);
             this.playerRushingYdsLy.TabIndex = 41;
@@ -287,7 +287,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 160);
+            this.label8.Location = new System.Drawing.Point(16, 160);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 40;
@@ -296,7 +296,7 @@
             // playerIntsLy
             // 
             this.playerIntsLy.AutoSize = true;
-            this.playerIntsLy.Location = new System.Drawing.Point(92, 89);
+            this.playerIntsLy.Location = new System.Drawing.Point(102, 89);
             this.playerIntsLy.Name = "playerIntsLy";
             this.playerIntsLy.Size = new System.Drawing.Size(63, 13);
             this.playerIntsLy.TabIndex = 39;
@@ -305,7 +305,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 89);
+            this.label10.Location = new System.Drawing.Point(16, 89);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 38;
@@ -314,7 +314,7 @@
             // playerPassingTDsLy
             // 
             this.playerPassingTDsLy.AutoSize = true;
-            this.playerPassingTDsLy.Location = new System.Drawing.Point(92, 51);
+            this.playerPassingTDsLy.Location = new System.Drawing.Point(102, 51);
             this.playerPassingTDsLy.Name = "playerPassingTDsLy";
             this.playerPassingTDsLy.Size = new System.Drawing.Size(103, 13);
             this.playerPassingTDsLy.TabIndex = 37;
@@ -323,7 +323,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 51);
+            this.label12.Location = new System.Drawing.Point(16, 51);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 13);
             this.label12.TabIndex = 36;
@@ -332,7 +332,7 @@
             // playerPassingYdsLy
             // 
             this.playerPassingYdsLy.AutoSize = true;
-            this.playerPassingYdsLy.Location = new System.Drawing.Point(92, 17);
+            this.playerPassingYdsLy.Location = new System.Drawing.Point(102, 17);
             this.playerPassingYdsLy.Name = "playerPassingYdsLy";
             this.playerPassingYdsLy.Size = new System.Drawing.Size(101, 13);
             this.playerPassingYdsLy.TabIndex = 35;
@@ -341,7 +341,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 17);
+            this.label14.Location = new System.Drawing.Point(16, 17);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(68, 13);
             this.label14.TabIndex = 34;
@@ -371,7 +371,7 @@
             // playerRushingTdsNy
             // 
             this.playerRushingTdsNy.AutoSize = true;
-            this.playerRushingTdsNy.Location = new System.Drawing.Point(99, 127);
+            this.playerRushingTdsNy.Location = new System.Drawing.Point(103, 127);
             this.playerRushingTdsNy.Name = "playerRushingTdsNy";
             this.playerRushingTdsNy.Size = new System.Drawing.Size(105, 13);
             this.playerRushingTdsNy.TabIndex = 49;
@@ -380,7 +380,7 @@
             // playerRushingTDsLabelNy
             // 
             this.playerRushingTDsLabelNy.AutoSize = true;
-            this.playerRushingTDsLabelNy.Location = new System.Drawing.Point(13, 127);
+            this.playerRushingTDsLabelNy.Location = new System.Drawing.Point(17, 127);
             this.playerRushingTDsLabelNy.Name = "playerRushingTDsLabelNy";
             this.playerRushingTDsLabelNy.Size = new System.Drawing.Size(72, 13);
             this.playerRushingTDsLabelNy.TabIndex = 48;
@@ -389,7 +389,7 @@
             // playerFumblesNy
             // 
             this.playerFumblesNy.AutoSize = true;
-            this.playerFumblesNy.Location = new System.Drawing.Point(99, 199);
+            this.playerFumblesNy.Location = new System.Drawing.Point(103, 199);
             this.playerFumblesNy.Name = "playerFumblesNy";
             this.playerFumblesNy.Size = new System.Drawing.Size(87, 13);
             this.playerFumblesNy.TabIndex = 45;
@@ -398,7 +398,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 199);
+            this.label18.Location = new System.Drawing.Point(17, 199);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(49, 13);
             this.label18.TabIndex = 44;
@@ -407,7 +407,7 @@
             // playerRushingYdsNy
             // 
             this.playerRushingYdsNy.AutoSize = true;
-            this.playerRushingYdsNy.Location = new System.Drawing.Point(99, 165);
+            this.playerRushingYdsNy.Location = new System.Drawing.Point(103, 165);
             this.playerRushingYdsNy.Name = "playerRushingYdsNy";
             this.playerRushingYdsNy.Size = new System.Drawing.Size(105, 13);
             this.playerRushingYdsNy.TabIndex = 41;
@@ -416,7 +416,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(13, 165);
+            this.label22.Location = new System.Drawing.Point(17, 165);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(70, 13);
             this.label22.TabIndex = 40;
@@ -425,7 +425,7 @@
             // playerIntsNy
             // 
             this.playerIntsNy.AutoSize = true;
-            this.playerIntsNy.Location = new System.Drawing.Point(99, 88);
+            this.playerIntsNy.Location = new System.Drawing.Point(103, 88);
             this.playerIntsNy.Name = "playerIntsNy";
             this.playerIntsNy.Size = new System.Drawing.Size(65, 13);
             this.playerIntsNy.TabIndex = 39;
@@ -434,7 +434,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(13, 88);
+            this.label24.Location = new System.Drawing.Point(17, 88);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(71, 13);
             this.label24.TabIndex = 38;
@@ -443,7 +443,7 @@
             // playerPassingTDsNy
             // 
             this.playerPassingTDsNy.AutoSize = true;
-            this.playerPassingTDsNy.Location = new System.Drawing.Point(99, 50);
+            this.playerPassingTDsNy.Location = new System.Drawing.Point(103, 50);
             this.playerPassingTDsNy.Name = "playerPassingTDsNy";
             this.playerPassingTDsNy.Size = new System.Drawing.Size(105, 13);
             this.playerPassingTDsNy.TabIndex = 37;
@@ -452,7 +452,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(13, 50);
+            this.label26.Location = new System.Drawing.Point(17, 50);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(70, 13);
             this.label26.TabIndex = 36;
@@ -461,7 +461,7 @@
             // playerPassingYdsNy
             // 
             this.playerPassingYdsNy.AutoSize = true;
-            this.playerPassingYdsNy.Location = new System.Drawing.Point(99, 16);
+            this.playerPassingYdsNy.Location = new System.Drawing.Point(103, 16);
             this.playerPassingYdsNy.Name = "playerPassingYdsNy";
             this.playerPassingYdsNy.Size = new System.Drawing.Size(103, 13);
             this.playerPassingYdsNy.TabIndex = 35;
@@ -470,7 +470,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(13, 16);
+            this.label28.Location = new System.Drawing.Point(17, 16);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(68, 13);
             this.label28.TabIndex = 34;
