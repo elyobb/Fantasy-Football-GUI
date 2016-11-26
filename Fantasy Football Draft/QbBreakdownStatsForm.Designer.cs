@@ -30,12 +30,10 @@
         {
             this.breakdownStatsTabs = new System.Windows.Forms.TabControl();
             this.currentYrTab = new System.Windows.Forms.TabPage();
-            this.playerPts = new System.Windows.Forms.Label();
-            this.playerPtsLabel = new System.Windows.Forms.Label();
+            this.playerRushingTds = new System.Windows.Forms.Label();
+            this.rushingTDsLabel = new System.Windows.Forms.Label();
             this.playerFumbles = new System.Windows.Forms.Label();
             this.fumblesLabel = new System.Windows.Forms.Label();
-            this.playerCarries = new System.Windows.Forms.Label();
-            this.carriesLabel = new System.Windows.Forms.Label();
             this.playerRushingYds = new System.Windows.Forms.Label();
             this.rushYdsLabel = new System.Windows.Forms.Label();
             this.playerInts = new System.Windows.Forms.Label();
@@ -45,15 +43,23 @@
             this.playerPassingYds = new System.Windows.Forms.Label();
             this.passingYdsLabel = new System.Windows.Forms.Label();
             this.lastYrTab = new System.Windows.Forms.TabPage();
+            this.playerRushingTdsLy = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.playerFumblesLy = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.playerRushingYdsLy = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.playerIntsLy = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.playerPassingTDsLy = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.playerPassingYdsLy = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.nextYrTab = new System.Windows.Forms.TabPage();
-            this.playerName = new System.Windows.Forms.Label();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.playerPtsNy = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.playerRushingTdsNy = new System.Windows.Forms.Label();
+            this.playerRushingTDsLabelNy = new System.Windows.Forms.Label();
             this.playerFumblesNy = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.playerCarriesNy = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.playerRushingYdsNy = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.playerIntsNy = new System.Windows.Forms.Label();
@@ -62,26 +68,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.playerPassingYdsNy = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.playerRushingTds = new System.Windows.Forms.Label();
-            this.rushingTDsLabel = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.playerPassingYdsLy = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.playerPassingTDsLy = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.playerIntsLy = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.playerRushingYdsLy = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.playerCarriesLy = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.playerFumblesLy = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.playerPtsLy = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.playerRushingTDsNy = new System.Windows.Forms.Label();
-            this.playerRushingTDsLabelNy = new System.Windows.Forms.Label();
+            this.playerName = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.breakdownStatsTabs.SuspendLayout();
             this.currentYrTab.SuspendLayout();
             this.lastYrTab.SuspendLayout();
@@ -96,19 +84,15 @@
             this.breakdownStatsTabs.Location = new System.Drawing.Point(12, 37);
             this.breakdownStatsTabs.Name = "breakdownStatsTabs";
             this.breakdownStatsTabs.SelectedIndex = 0;
-            this.breakdownStatsTabs.Size = new System.Drawing.Size(247, 344);
+            this.breakdownStatsTabs.Size = new System.Drawing.Size(247, 262);
             this.breakdownStatsTabs.TabIndex = 5;
             // 
             // currentYrTab
             // 
             this.currentYrTab.Controls.Add(this.playerRushingTds);
             this.currentYrTab.Controls.Add(this.rushingTDsLabel);
-            this.currentYrTab.Controls.Add(this.playerPts);
-            this.currentYrTab.Controls.Add(this.playerPtsLabel);
             this.currentYrTab.Controls.Add(this.playerFumbles);
             this.currentYrTab.Controls.Add(this.fumblesLabel);
-            this.currentYrTab.Controls.Add(this.playerCarries);
-            this.currentYrTab.Controls.Add(this.carriesLabel);
             this.currentYrTab.Controls.Add(this.playerRushingYds);
             this.currentYrTab.Controls.Add(this.rushYdsLabel);
             this.currentYrTab.Controls.Add(this.playerInts);
@@ -120,33 +104,33 @@
             this.currentYrTab.Location = new System.Drawing.Point(4, 22);
             this.currentYrTab.Name = "currentYrTab";
             this.currentYrTab.Padding = new System.Windows.Forms.Padding(3);
-            this.currentYrTab.Size = new System.Drawing.Size(239, 318);
+            this.currentYrTab.Size = new System.Drawing.Size(239, 236);
             this.currentYrTab.TabIndex = 0;
             this.currentYrTab.Text = "Current Year";
             this.currentYrTab.UseVisualStyleBackColor = true;
             // 
-            // playerPts
+            // playerRushingTds
             // 
-            this.playerPts.AutoSize = true;
-            this.playerPts.Location = new System.Drawing.Point(95, 280);
-            this.playerPts.Name = "playerPts";
-            this.playerPts.Size = new System.Drawing.Size(50, 13);
-            this.playerPts.TabIndex = 33;
-            this.playerPts.Text = "playerPts";
+            this.playerRushingTds.AutoSize = true;
+            this.playerRushingTds.Location = new System.Drawing.Point(92, 128);
+            this.playerRushingTds.Name = "playerRushingTds";
+            this.playerRushingTds.Size = new System.Drawing.Size(92, 13);
+            this.playerRushingTds.TabIndex = 35;
+            this.playerRushingTds.Text = "playerRushingTds";
             // 
-            // playerPtsLabel
+            // rushingTDsLabel
             // 
-            this.playerPtsLabel.AutoSize = true;
-            this.playerPtsLabel.Location = new System.Drawing.Point(6, 281);
-            this.playerPtsLabel.Name = "playerPtsLabel";
-            this.playerPtsLabel.Size = new System.Drawing.Size(66, 13);
-            this.playerPtsLabel.TabIndex = 32;
-            this.playerPtsLabel.Text = "Total Points:";
+            this.rushingTDsLabel.AutoSize = true;
+            this.rushingTDsLabel.Location = new System.Drawing.Point(6, 128);
+            this.rushingTDsLabel.Name = "rushingTDsLabel";
+            this.rushingTDsLabel.Size = new System.Drawing.Size(72, 13);
+            this.rushingTDsLabel.TabIndex = 34;
+            this.rushingTDsLabel.Text = "Rushing TDs:";
             // 
             // playerFumbles
             // 
             this.playerFumbles.AutoSize = true;
-            this.playerFumbles.Location = new System.Drawing.Point(92, 242);
+            this.playerFumbles.Location = new System.Drawing.Point(92, 198);
             this.playerFumbles.Name = "playerFumbles";
             this.playerFumbles.Size = new System.Drawing.Size(74, 13);
             this.playerFumbles.TabIndex = 31;
@@ -155,29 +139,11 @@
             // fumblesLabel
             // 
             this.fumblesLabel.AutoSize = true;
-            this.fumblesLabel.Location = new System.Drawing.Point(6, 242);
+            this.fumblesLabel.Location = new System.Drawing.Point(6, 198);
             this.fumblesLabel.Name = "fumblesLabel";
             this.fumblesLabel.Size = new System.Drawing.Size(49, 13);
             this.fumblesLabel.TabIndex = 30;
             this.fumblesLabel.Text = "Fumbles:";
-            // 
-            // playerCarries
-            // 
-            this.playerCarries.AutoSize = true;
-            this.playerCarries.Location = new System.Drawing.Point(92, 203);
-            this.playerCarries.Name = "playerCarries";
-            this.playerCarries.Size = new System.Drawing.Size(67, 13);
-            this.playerCarries.TabIndex = 27;
-            this.playerCarries.Text = "playerCarries";
-            // 
-            // carriesLabel
-            // 
-            this.carriesLabel.AutoSize = true;
-            this.carriesLabel.Location = new System.Drawing.Point(6, 203);
-            this.carriesLabel.Name = "carriesLabel";
-            this.carriesLabel.Size = new System.Drawing.Size(42, 13);
-            this.carriesLabel.TabIndex = 26;
-            this.carriesLabel.Text = "Carries:";
             // 
             // playerRushingYds
             // 
@@ -253,14 +219,10 @@
             // 
             // lastYrTab
             // 
-            this.lastYrTab.Controls.Add(this.label1);
+            this.lastYrTab.Controls.Add(this.playerRushingTdsLy);
             this.lastYrTab.Controls.Add(this.label3);
-            this.lastYrTab.Controls.Add(this.playerPtsLy);
-            this.lastYrTab.Controls.Add(this.label2);
             this.lastYrTab.Controls.Add(this.playerFumblesLy);
             this.lastYrTab.Controls.Add(this.label4);
-            this.lastYrTab.Controls.Add(this.playerCarriesLy);
-            this.lastYrTab.Controls.Add(this.label6);
             this.lastYrTab.Controls.Add(this.playerRushingYdsLy);
             this.lastYrTab.Controls.Add(this.label8);
             this.lastYrTab.Controls.Add(this.playerIntsLy);
@@ -272,21 +234,125 @@
             this.lastYrTab.Location = new System.Drawing.Point(4, 22);
             this.lastYrTab.Name = "lastYrTab";
             this.lastYrTab.Padding = new System.Windows.Forms.Padding(3);
-            this.lastYrTab.Size = new System.Drawing.Size(239, 318);
+            this.lastYrTab.Size = new System.Drawing.Size(239, 236);
             this.lastYrTab.TabIndex = 1;
             this.lastYrTab.Text = "Last Year";
             this.lastYrTab.UseVisualStyleBackColor = true;
             // 
+            // playerRushingTdsLy
+            // 
+            this.playerRushingTdsLy.AutoSize = true;
+            this.playerRushingTdsLy.Location = new System.Drawing.Point(92, 125);
+            this.playerRushingTdsLy.Name = "playerRushingTdsLy";
+            this.playerRushingTdsLy.Size = new System.Drawing.Size(103, 13);
+            this.playerRushingTdsLy.TabIndex = 49;
+            this.playerRushingTdsLy.Text = "playerRushingTdsLy";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 125);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Rushing TDs:";
+            // 
+            // playerFumblesLy
+            // 
+            this.playerFumblesLy.AutoSize = true;
+            this.playerFumblesLy.Location = new System.Drawing.Point(92, 200);
+            this.playerFumblesLy.Name = "playerFumblesLy";
+            this.playerFumblesLy.Size = new System.Drawing.Size(85, 13);
+            this.playerFumblesLy.TabIndex = 45;
+            this.playerFumblesLy.Text = "playerFumblesLy";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 200);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Fumbles:";
+            // 
+            // playerRushingYdsLy
+            // 
+            this.playerRushingYdsLy.AutoSize = true;
+            this.playerRushingYdsLy.Location = new System.Drawing.Point(92, 160);
+            this.playerRushingYdsLy.Name = "playerRushingYdsLy";
+            this.playerRushingYdsLy.Size = new System.Drawing.Size(103, 13);
+            this.playerRushingYdsLy.TabIndex = 41;
+            this.playerRushingYdsLy.Text = "playerRushingYdsLy";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 160);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Rushing Yds:";
+            // 
+            // playerIntsLy
+            // 
+            this.playerIntsLy.AutoSize = true;
+            this.playerIntsLy.Location = new System.Drawing.Point(92, 89);
+            this.playerIntsLy.Name = "playerIntsLy";
+            this.playerIntsLy.Size = new System.Drawing.Size(63, 13);
+            this.playerIntsLy.TabIndex = 39;
+            this.playerIntsLy.Text = "playerIntsLy";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 89);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 13);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "Interceptions:";
+            // 
+            // playerPassingTDsLy
+            // 
+            this.playerPassingTDsLy.AutoSize = true;
+            this.playerPassingTDsLy.Location = new System.Drawing.Point(92, 51);
+            this.playerPassingTDsLy.Name = "playerPassingTDsLy";
+            this.playerPassingTDsLy.Size = new System.Drawing.Size(103, 13);
+            this.playerPassingTDsLy.TabIndex = 37;
+            this.playerPassingTDsLy.Text = "playerPassingTDsLy";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 51);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(70, 13);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Passing TDs:";
+            // 
+            // playerPassingYdsLy
+            // 
+            this.playerPassingYdsLy.AutoSize = true;
+            this.playerPassingYdsLy.Location = new System.Drawing.Point(92, 17);
+            this.playerPassingYdsLy.Name = "playerPassingYdsLy";
+            this.playerPassingYdsLy.Size = new System.Drawing.Size(101, 13);
+            this.playerPassingYdsLy.TabIndex = 35;
+            this.playerPassingYdsLy.Text = "playerPassingYdsLy";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 17);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 13);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Passing Yds:";
+            // 
             // nextYrTab
             // 
-            this.nextYrTab.Controls.Add(this.playerRushingTDsNy);
+            this.nextYrTab.Controls.Add(this.playerRushingTdsNy);
             this.nextYrTab.Controls.Add(this.playerRushingTDsLabelNy);
-            this.nextYrTab.Controls.Add(this.playerPtsNy);
-            this.nextYrTab.Controls.Add(this.label16);
             this.nextYrTab.Controls.Add(this.playerFumblesNy);
             this.nextYrTab.Controls.Add(this.label18);
-            this.nextYrTab.Controls.Add(this.playerCarriesNy);
-            this.nextYrTab.Controls.Add(this.label20);
             this.nextYrTab.Controls.Add(this.playerRushingYdsNy);
             this.nextYrTab.Controls.Add(this.label22);
             this.nextYrTab.Controls.Add(this.playerIntsNy);
@@ -297,51 +363,33 @@
             this.nextYrTab.Controls.Add(this.label28);
             this.nextYrTab.Location = new System.Drawing.Point(4, 22);
             this.nextYrTab.Name = "nextYrTab";
-            this.nextYrTab.Size = new System.Drawing.Size(239, 318);
+            this.nextYrTab.Size = new System.Drawing.Size(239, 236);
             this.nextYrTab.TabIndex = 2;
             this.nextYrTab.Text = "Projected Next Year";
             this.nextYrTab.UseVisualStyleBackColor = true;
             // 
-            // playerName
+            // playerRushingTdsNy
             // 
-            this.playerName.AutoSize = true;
-            this.playerName.Location = new System.Drawing.Point(58, 20);
-            this.playerName.Name = "playerName";
-            this.playerName.Size = new System.Drawing.Size(63, 13);
-            this.playerName.TabIndex = 4;
-            this.playerName.Text = "playerName";
+            this.playerRushingTdsNy.AutoSize = true;
+            this.playerRushingTdsNy.Location = new System.Drawing.Point(99, 127);
+            this.playerRushingTdsNy.Name = "playerRushingTdsNy";
+            this.playerRushingTdsNy.Size = new System.Drawing.Size(105, 13);
+            this.playerRushingTdsNy.TabIndex = 49;
+            this.playerRushingTdsNy.Text = "playerRushingTdsNy";
             // 
-            // nameLabel
+            // playerRushingTDsLabelNy
             // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(13, 20);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(39, 13);
-            this.nameLabel.TabIndex = 3;
-            this.nameLabel.Text = "Player:";
-            // 
-            // playerPtsNy
-            // 
-            this.playerPtsNy.AutoSize = true;
-            this.playerPtsNy.Location = new System.Drawing.Point(102, 281);
-            this.playerPtsNy.Name = "playerPtsNy";
-            this.playerPtsNy.Size = new System.Drawing.Size(63, 13);
-            this.playerPtsNy.TabIndex = 47;
-            this.playerPtsNy.Text = "playerPtsNy";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 282);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
-            this.label16.TabIndex = 46;
-            this.label16.Text = "Total Points:";
+            this.playerRushingTDsLabelNy.AutoSize = true;
+            this.playerRushingTDsLabelNy.Location = new System.Drawing.Point(13, 127);
+            this.playerRushingTDsLabelNy.Name = "playerRushingTDsLabelNy";
+            this.playerRushingTDsLabelNy.Size = new System.Drawing.Size(72, 13);
+            this.playerRushingTDsLabelNy.TabIndex = 48;
+            this.playerRushingTDsLabelNy.Text = "Rushing TDs:";
             // 
             // playerFumblesNy
             // 
             this.playerFumblesNy.AutoSize = true;
-            this.playerFumblesNy.Location = new System.Drawing.Point(99, 243);
+            this.playerFumblesNy.Location = new System.Drawing.Point(99, 199);
             this.playerFumblesNy.Name = "playerFumblesNy";
             this.playerFumblesNy.Size = new System.Drawing.Size(87, 13);
             this.playerFumblesNy.TabIndex = 45;
@@ -350,29 +398,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 243);
+            this.label18.Location = new System.Drawing.Point(13, 199);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(49, 13);
             this.label18.TabIndex = 44;
             this.label18.Text = "Fumbles:";
-            // 
-            // playerCarriesNy
-            // 
-            this.playerCarriesNy.AutoSize = true;
-            this.playerCarriesNy.Location = new System.Drawing.Point(99, 204);
-            this.playerCarriesNy.Name = "playerCarriesNy";
-            this.playerCarriesNy.Size = new System.Drawing.Size(80, 13);
-            this.playerCarriesNy.TabIndex = 43;
-            this.playerCarriesNy.Text = "playerCarriesNy";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(13, 204);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(42, 13);
-            this.label20.TabIndex = 42;
-            this.label20.Text = "Carries:";
             // 
             // playerRushingYdsNy
             // 
@@ -446,191 +476,29 @@
             this.label28.TabIndex = 34;
             this.label28.Text = "Passing Yds:";
             // 
-            // playerRushingTds
+            // playerName
             // 
-            this.playerRushingTds.AutoSize = true;
-            this.playerRushingTds.Location = new System.Drawing.Point(92, 128);
-            this.playerRushingTds.Name = "playerRushingTds";
-            this.playerRushingTds.Size = new System.Drawing.Size(92, 13);
-            this.playerRushingTds.TabIndex = 35;
-            this.playerRushingTds.Text = "playerRushingTds";
+            this.playerName.AutoSize = true;
+            this.playerName.Location = new System.Drawing.Point(58, 20);
+            this.playerName.Name = "playerName";
+            this.playerName.Size = new System.Drawing.Size(63, 13);
+            this.playerName.TabIndex = 4;
+            this.playerName.Text = "playerName";
             // 
-            // rushingTDsLabel
+            // nameLabel
             // 
-            this.rushingTDsLabel.AutoSize = true;
-            this.rushingTDsLabel.Location = new System.Drawing.Point(6, 128);
-            this.rushingTDsLabel.Name = "rushingTDsLabel";
-            this.rushingTDsLabel.Size = new System.Drawing.Size(72, 13);
-            this.rushingTDsLabel.TabIndex = 34;
-            this.rushingTDsLabel.Text = "Rushing TDs:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 17);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 13);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Passing Yds:";
-            // 
-            // playerPassingYdsLy
-            // 
-            this.playerPassingYdsLy.AutoSize = true;
-            this.playerPassingYdsLy.Location = new System.Drawing.Point(92, 17);
-            this.playerPassingYdsLy.Name = "playerPassingYdsLy";
-            this.playerPassingYdsLy.Size = new System.Drawing.Size(101, 13);
-            this.playerPassingYdsLy.TabIndex = 35;
-            this.playerPassingYdsLy.Text = "playerPassingYdsLy";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 51);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 13);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "Passing TDs:";
-            // 
-            // playerPassingTDsLy
-            // 
-            this.playerPassingTDsLy.AutoSize = true;
-            this.playerPassingTDsLy.Location = new System.Drawing.Point(92, 51);
-            this.playerPassingTDsLy.Name = "playerPassingTDsLy";
-            this.playerPassingTDsLy.Size = new System.Drawing.Size(103, 13);
-            this.playerPassingTDsLy.TabIndex = 37;
-            this.playerPassingTDsLy.Text = "playerPassingTDsLy";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 89);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 13);
-            this.label10.TabIndex = 38;
-            this.label10.Text = "Interceptions:";
-            // 
-            // playerIntsLy
-            // 
-            this.playerIntsLy.AutoSize = true;
-            this.playerIntsLy.Location = new System.Drawing.Point(92, 89);
-            this.playerIntsLy.Name = "playerIntsLy";
-            this.playerIntsLy.Size = new System.Drawing.Size(63, 13);
-            this.playerIntsLy.TabIndex = 39;
-            this.playerIntsLy.Text = "playerIntsLy";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 160);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "Rushing Yds:";
-            // 
-            // playerRushingYdsLy
-            // 
-            this.playerRushingYdsLy.AutoSize = true;
-            this.playerRushingYdsLy.Location = new System.Drawing.Point(92, 160);
-            this.playerRushingYdsLy.Name = "playerRushingYdsLy";
-            this.playerRushingYdsLy.Size = new System.Drawing.Size(103, 13);
-            this.playerRushingYdsLy.TabIndex = 41;
-            this.playerRushingYdsLy.Text = "playerRushingYdsLy";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 199);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Carries:";
-            // 
-            // playerCarriesLy
-            // 
-            this.playerCarriesLy.AutoSize = true;
-            this.playerCarriesLy.Location = new System.Drawing.Point(92, 199);
-            this.playerCarriesLy.Name = "playerCarriesLy";
-            this.playerCarriesLy.Size = new System.Drawing.Size(78, 13);
-            this.playerCarriesLy.TabIndex = 43;
-            this.playerCarriesLy.Text = "playerCarriesLy";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 238);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Fumbles:";
-            // 
-            // playerFumblesLy
-            // 
-            this.playerFumblesLy.AutoSize = true;
-            this.playerFumblesLy.Location = new System.Drawing.Point(92, 238);
-            this.playerFumblesLy.Name = "playerFumblesLy";
-            this.playerFumblesLy.Size = new System.Drawing.Size(85, 13);
-            this.playerFumblesLy.TabIndex = 45;
-            this.playerFumblesLy.Text = "playerFumblesLy";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 277);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Total Points:";
-            // 
-            // playerPtsLy
-            // 
-            this.playerPtsLy.AutoSize = true;
-            this.playerPtsLy.Location = new System.Drawing.Point(95, 276);
-            this.playerPtsLy.Name = "playerPtsLy";
-            this.playerPtsLy.Size = new System.Drawing.Size(61, 13);
-            this.playerPtsLy.TabIndex = 47;
-            this.playerPtsLy.Text = "playerPtsLy";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(92, 125);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "label1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Rushing TDs:";
-            // 
-            // playerRushingTDsNy
-            // 
-            this.playerRushingTDsNy.AutoSize = true;
-            this.playerRushingTDsNy.Location = new System.Drawing.Point(99, 127);
-            this.playerRushingTDsNy.Name = "playerRushingTDsNy";
-            this.playerRushingTDsNy.Size = new System.Drawing.Size(107, 13);
-            this.playerRushingTDsNy.TabIndex = 49;
-            this.playerRushingTDsNy.Text = "playerRushingTDsNy";
-            // 
-            // playerRushingTDsLabelNy
-            // 
-            this.playerRushingTDsLabelNy.AutoSize = true;
-            this.playerRushingTDsLabelNy.Location = new System.Drawing.Point(13, 127);
-            this.playerRushingTDsLabelNy.Name = "playerRushingTDsLabelNy";
-            this.playerRushingTDsLabelNy.Size = new System.Drawing.Size(72, 13);
-            this.playerRushingTDsLabelNy.TabIndex = 48;
-            this.playerRushingTDsLabelNy.Text = "Rushing TDs:";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(13, 20);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(39, 13);
+            this.nameLabel.TabIndex = 3;
+            this.nameLabel.Text = "Player:";
             // 
             // QbBreakdownStatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 393);
+            this.ClientSize = new System.Drawing.Size(271, 317);
             this.Controls.Add(this.breakdownStatsTabs);
             this.Controls.Add(this.playerName);
             this.Controls.Add(this.nameLabel);
@@ -652,12 +520,8 @@
 
         private System.Windows.Forms.TabControl breakdownStatsTabs;
         private System.Windows.Forms.TabPage currentYrTab;
-        private System.Windows.Forms.Label playerPts;
-        private System.Windows.Forms.Label playerPtsLabel;
         private System.Windows.Forms.Label playerFumbles;
         private System.Windows.Forms.Label fumblesLabel;
-        private System.Windows.Forms.Label playerCarries;
-        private System.Windows.Forms.Label carriesLabel;
         private System.Windows.Forms.Label playerRushingYds;
         private System.Windows.Forms.Label rushYdsLabel;
         private System.Windows.Forms.Label playerInts;
@@ -670,12 +534,8 @@
         private System.Windows.Forms.TabPage nextYrTab;
         private System.Windows.Forms.Label playerName;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label playerPtsNy;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label playerFumblesNy;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label playerCarriesNy;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label playerRushingYdsNy;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label playerIntsNy;
@@ -686,14 +546,10 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label playerRushingTds;
         private System.Windows.Forms.Label rushingTDsLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label playerRushingTdsLy;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label playerPtsLy;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label playerFumblesLy;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label playerCarriesLy;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label playerRushingYdsLy;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label playerIntsLy;
@@ -702,7 +558,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label playerPassingYdsLy;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label playerRushingTDsNy;
+        private System.Windows.Forms.Label playerRushingTdsNy;
         private System.Windows.Forms.Label playerRushingTDsLabelNy;
     }
 }

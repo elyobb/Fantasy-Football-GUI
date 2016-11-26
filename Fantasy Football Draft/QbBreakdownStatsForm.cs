@@ -23,18 +23,30 @@ namespace Fantasy_Football_Draft
         private void populateQbBreakdownStats(string playerId)
         {
             var query = new SqlQueries();
-            var player = query.GetPlayerInfo(playerId);
+            var player = query.GetQbBreakdownStat(playerId);
 
             this.playerName.Text = player.playerName;
+            // current yr
             this.playerPassingYds.Text = player.playerPassingYds;
             this.playerPassingTDs.Text = player.playerPassingTDs;
             this.playerInts.Text = player.playerInts;
             this.playerRushingTds.Text = player.playerRushingTds;
             this.playerRushingYds.Text = player.playerRushingYds;
-            this.playerCarries.Text = player.playerCarries;
             this.playerFumbles.Text = player.playerFumbles;
-            this.playerPts.Text = player.playerPts;
-
+            // last yr
+            this.playerPassingYdsLy.Text = player.playerPassingYdsLy;
+            this.playerPassingTDsLy.Text = player.playerPassingTDsLy;
+            this.playerIntsLy.Text = player.playerIntsLy;
+            this.playerRushingTdsLy.Text = player.playerRushingTdsLy;
+            this.playerRushingYdsLy.Text = player.playerRushingYdsLy;
+            this.playerFumblesLy.Text = player.playerFumblesLy;
+            // next yr
+            this.playerPassingYdsNy.Text = player.playerPassingYdsNy;
+            this.playerPassingTDsNy.Text = player.playerPassingTDsNy;
+            this.playerIntsNy.Text = player.playerIntsNy;
+            this.playerRushingTdsNy.Text = player.playerRushingTdsNy;
+            this.playerRushingYdsNy.Text = player.playerRushingYdsNy;
+            this.playerFumblesNy.Text = player.playerFumblesNy;
         }
     }
 }
