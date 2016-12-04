@@ -47,9 +47,17 @@ namespace Fantasy_Football_Draft
         {
             //first clear out old data
             draftedTeamPlayers.Rows.Clear();
-            if(draftedTeamsTable.Focused){
+            if (draftedTeamsTable.Focused)
+            {
                 DataGridViewRow selectedRow = this.draftedTeamsTable.SelectedRows[0];
-                if(selectedRow.Cells[0].Value != null)
+                DataGridViewRow selectedRowPlayer = playerTable.SelectedRows[0];
+
+                if (selectedRowPlayer.Cells[0] != null)
+                {
+                    string playerId = selectedRowPlayer.Cells[0].Value.ToString();
+                }
+
+                if (selectedRow.Cells[0].Value != null)
                 {
                     var teamName = selectedRow.Cells[0].Value.ToString();
                     conn.Open();
@@ -74,6 +82,39 @@ namespace Fantasy_Football_Draft
 
         /* calls a select from the database for all player data, populates it into the playerTable 
         in the GUI */
+
+        private void searchPlayerTable(string query)
+        {
+            conn.Open();
+            var comm = connection.GetCommand("Select * From Player Where Player.Name like '%" + query + "%'");
+            try
+            {
+                using (SQLiteDataReader read = comm.ExecuteReader())
+                {
+                    playerTable.Rows.Clear();
+                    while (read.Read())
+                    {
+                        // parse value into lots of money
+                        int rawValue = (int)read.GetValue(3);
+                        int newValue = rawValue * 10000;
+                        string stringNewValue = newValue.ToString("C2");
+                        playerTable.Rows.Add(new object[] {
+                        read.GetValue(0),
+                        read.GetValue(2),
+                        read.GetValue(4),
+                        read.GetValue(5),
+                        read.GetValue(1),
+                        stringNewValue
+                    });
+                    }
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
         private void populatePlayerTable()
         {
             var comm = connection.GetCommand("Select * From Player");
@@ -84,7 +125,7 @@ namespace Fantasy_Football_Draft
                     // parse value into lots of money
                     int rawValue = (int)read.GetValue(3);
                     int newValue = rawValue * 10000;
-                    string stringNewValue = newValue.ToString("N0");
+                    string stringNewValue = newValue.ToString("C2");
 
                     playerTable.Rows.Add(new object[] {
                         read.GetValue(0),
@@ -120,7 +161,7 @@ namespace Fantasy_Football_Draft
             }
 
             draftedTeamsTable.Rows[0].Selected = true;
-            if(draftedTeamsTable.Rows[0].Cells[0].Value != null)
+            if (draftedTeamsTable.Rows[0].Cells[0].Value != null)
             {
                 string selectedTeam = draftedTeamsTable.Rows[0].Cells[0].Value.ToString();
                 populateDraftedTeamPlayers(selectedTeam);
@@ -158,10 +199,10 @@ namespace Fantasy_Football_Draft
             PhysicalStatsForm popup = new PhysicalStatsForm(playerId);
             popup.Show();
         }
-        
+
         /**
          * Displays a popup for the selected player showing their play performance stats
-         */ 
+         */
         private void getBreakdownStatsButton_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = playerTable.SelectedRows[0];
@@ -169,7 +210,7 @@ namespace Fantasy_Football_Draft
             var playerPos = selectedRow.Cells[3].Value.ToString();
 
             // quarterbacks have different breakdown stats form
-            if(playerPos == "QB")
+            if (playerPos == "QB")
             {
                 QbBreakdownStatsForm popup = new QbBreakdownStatsForm(playerId);
                 popup.Show();
@@ -194,7 +235,11 @@ namespace Fantasy_Football_Draft
             string position = selectedRow.Cells[3].Value.ToString();
             string rank = selectedRow.Cells[4].Value.ToString();
             string value = selectedRow.Cells[5].Value.ToString();
-            int intValue = Int32.Parse(value, NumberStyles.AllowThousands);
+            string val = value.Substring(1);
+            val = val.Replace(",", "");
+            val = val.Replace(".", "");
+            int intValue = Int32.Parse(val, NumberStyles.AllowThousands);
+            intValue = intValue / 100;
             // adds the selected player to the draft tab list if it doesnt exist
             bool exists = false;
             foreach (DataGridViewRow row in draftTable.Rows)
@@ -203,7 +248,7 @@ namespace Fantasy_Football_Draft
                 if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().Equals(playerId))
                 {
                     exists = true;
-                }             
+                }
             }
             if (!exists)
             {
@@ -223,7 +268,7 @@ namespace Fantasy_Football_Draft
                 catch (System.FormatException)
                 {
                     // if funds have updated to be below 0, an exception is thrown because we haven't set the flag for allowing negatives
-                    String strFunds = remainingFunds.Text.Replace(",", "");
+                    string strFunds = remainingFunds.Text.Replace(",", "");
                     // tell number parser to parse negatives
                     remFunds = Int32.Parse(strFunds, NumberStyles.AllowLeadingSign);
                 }
@@ -246,10 +291,12 @@ namespace Fantasy_Football_Draft
         {
             // the default number of rows in a datagridview (gui table) is 1 empty row.
             // this can probably be changed as a property
-            if(draftTable.Rows.Count > 1)
+            if (draftTable.Rows.Count >= 1)
             {
                 DataGridViewRow selectedRow = draftTable.SelectedRows[0];
-                String value = selectedRow.Cells[5].Value.ToString();
+                string value = selectedRow.Cells[5].Value.ToString();
+                value = value.Replace("$", "");
+                value = value.Replace(".00", "");
                 int intValue = Int32.Parse(value, NumberStyles.AllowThousands);
                 int remFunds;
                 try
@@ -259,7 +306,7 @@ namespace Fantasy_Football_Draft
                 catch (System.FormatException)
                 {
                     // happens when funds go below 0
-                    String strFunds = remainingFunds.Text.Replace(",", "");
+                    string strFunds = remainingFunds.Text.Replace(",", "");
                     remFunds = Int32.Parse(strFunds, NumberStyles.AllowLeadingSign);
                 }
                 remFunds += intValue;
@@ -308,7 +355,7 @@ namespace Fantasy_Football_Draft
                 {
                     queries.ExecuteQuery(insertTeamSql);
                 }
-                catch(SQLiteException)
+                catch (SQLiteException)
                 {
                     MessageBox.Show("Team " + teamName + " already exists. Try again!");
                     return;
@@ -316,7 +363,7 @@ namespace Fantasy_Football_Draft
                 // the team name was unique and valid, so go ahead and add each player to the drafted player table
                 foreach (DataGridViewRow row in draftTable.Rows)
                 {
-                    if(row.Cells[0].Value != null)
+                    if (row.Cells[0].Value != null)
                     {
                         var id = row.Cells[0].Value.ToString();
                         // dynamically created sql based on which players are in 'To draft' table
@@ -333,6 +380,7 @@ namespace Fantasy_Football_Draft
                     // clear out the data because the players were drafted
                     draftTable.Rows.Clear();
                     draftTeamName.Text = "";
+                    this.remainingFunds.Text = "10,000,000";
                 }
             }
             else
@@ -359,6 +407,19 @@ namespace Fantasy_Football_Draft
             queries.ExecuteQuery(deleteDraftedPlayers);
             queries.ExecuteQuery(deleteDraftedTeams);
             draftedTeamsTable.Rows.Remove(selectedRow);
+        }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+            var text = searchbox.Text;
+            if (text == null)
+            {
+                populatePlayerTable();
+            }
+            else
+            {
+                searchPlayerTable(text);
+            }
         }
     }
 }

@@ -71,6 +71,17 @@ namespace Fantasy_Football_Draft
             this.remainingFunds = new System.Windows.Forms.Label();
             this.remainingFundsLabel = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.searchbox = new System.Windows.Forms.TextBox();
+            this.search = new System.Windows.Forms.Button();
+            this.playerTableAdapter1 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.PlayerTableAdapter();
+            this.playerTableAdapter2 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.PlayerTableAdapter();
+            this.breakdownStatsTableAdapter1 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.BreakdownStatsTableAdapter();
+            this.playerTableAdapter3 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.PlayerTableAdapter();
+            this.breakdownStatsTableAdapter2 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.BreakdownStatsTableAdapter();
+            this.physicalStatsTableAdapter1 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.PhysicalStatsTableAdapter();
+            this.playerTableAdapter4 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.PlayerTableAdapter();
+            this.qbBreakdownStatsTableAdapter1 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.QbBreakdownStatsTableAdapter();
+            this.breakdownStatsTableAdapter3 = new Fantasy_Football_Draft.FantasyFootballDbDataSetTableAdapters.BreakdownStatsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.physical_StatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
             this.fantasyLeagueTab.SuspendLayout();
@@ -447,11 +458,67 @@ namespace Fantasy_Football_Draft
             this.tabControl.TabIndex = 0;
             this.tabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl_Selected);
             // 
+            // searchbox
+            // 
+            this.searchbox.HideSelection = false;
+            this.searchbox.Location = new System.Drawing.Point(490, 30);
+            this.searchbox.Name = "searchbox";
+            this.searchbox.Size = new System.Drawing.Size(100, 20);
+            this.searchbox.TabIndex = 4;
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(596, 29);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(75, 23);
+            this.search.TabIndex = 5;
+            this.search.Text = "Search";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            // 
+            // playerTableAdapter1
+            // 
+            this.playerTableAdapter1.ClearBeforeFill = true;
+            // 
+            // playerTableAdapter2
+            // 
+            this.playerTableAdapter2.ClearBeforeFill = true;
+            // 
+            // breakdownStatsTableAdapter1
+            // 
+            this.breakdownStatsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // playerTableAdapter3
+            // 
+            this.playerTableAdapter3.ClearBeforeFill = true;
+            // 
+            // breakdownStatsTableAdapter2
+            // 
+            this.breakdownStatsTableAdapter2.ClearBeforeFill = true;
+            // 
+            // physicalStatsTableAdapter1
+            // 
+            this.physicalStatsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // playerTableAdapter4
+            // 
+            this.playerTableAdapter4.ClearBeforeFill = true;
+            // 
+            // qbBreakdownStatsTableAdapter1
+            // 
+            this.qbBreakdownStatsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // breakdownStatsTableAdapter3
+            // 
+            this.breakdownStatsTableAdapter3.ClearBeforeFill = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 457);
+            this.ClientSize = new System.Drawing.Size(731, 457);
+            this.Controls.Add(this.search);
+            this.Controls.Add(this.searchbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl);
             this.Name = "MainForm";
@@ -519,6 +586,17 @@ namespace Fantasy_Football_Draft
         private DataGridViewTextBoxColumn Column13;
         private DataGridView draftedTeamPlayers;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private FantasyFootballDbDataSetTableAdapters.PlayerTableAdapter playerTableAdapter1;
+        private FantasyFootballDbDataSetTableAdapters.PlayerTableAdapter playerTableAdapter2;
+        private FantasyFootballDbDataSetTableAdapters.BreakdownStatsTableAdapter breakdownStatsTableAdapter1;
+        private FantasyFootballDbDataSetTableAdapters.PlayerTableAdapter playerTableAdapter3;
+        private FantasyFootballDbDataSetTableAdapters.BreakdownStatsTableAdapter breakdownStatsTableAdapter2;
+        private FantasyFootballDbDataSetTableAdapters.PhysicalStatsTableAdapter physicalStatsTableAdapter1;
+        private FantasyFootballDbDataSetTableAdapters.PlayerTableAdapter playerTableAdapter4;
+        private FantasyFootballDbDataSetTableAdapters.QbBreakdownStatsTableAdapter qbBreakdownStatsTableAdapter1;
+        private FantasyFootballDbDataSetTableAdapters.BreakdownStatsTableAdapter breakdownStatsTableAdapter3;
+        private Button search;
+        public TextBox searchbox;
     }
 }
 
